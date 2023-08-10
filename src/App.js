@@ -7,7 +7,7 @@ function App() {
   const [lastName, setLastName] = useState("");
   const [birthday, setBirthday] = useState("");
   const [age, setAge] = useState();
-  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("Thai");
   const [popup, setPopup] = useState(false);
 
   const calculate_age = (birthday) => {
@@ -23,6 +23,7 @@ function App() {
 
   function handleSubmitForm(e) {
     e.preventDefault();
+    console.log({ city });
     setAge(calculate_age(birthday));
     setPopup(true);
   }
@@ -65,7 +66,7 @@ function App() {
           </div>
           <div>
             <label>ประเทศที่อาศัย</label>
-            <select value={city} onChange={(e) => setCity(e.target.value)}>
+            <select value={city} onChange={(e) => setCountry(e.target.value)}>
               <option value="Thai">Thai</option>
               <option value="Singapore">Singapore</option>
               <option value="Vietnam">Vietnam</option>
@@ -80,7 +81,7 @@ function App() {
         <Popup
           firstName={firstName}
           lastName={lastName}
-          city={city}
+          country={country}
           age={age}
           closePopup={() => setPopup(false)}
         />

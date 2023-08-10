@@ -9,7 +9,7 @@ export const Popup = ({ firstName, lastName, city, age, closePopup }) => {
         </h2>
         <h2>คุณมาจากประเทศ : {city}</h2>
         <h2>คุณอายุ : {age} ปี</h2>
-        <button onClick={closePopup}>Close X</button>
+        <button onClick={closePopup}>ปิด</button>
       </div>
     </div>
   );
